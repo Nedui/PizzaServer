@@ -24,7 +24,11 @@ const PizzaSchema = new Schema<Ipizza>({
     price: {
         type: Number,
         required:[true,'price required']
-    }
+    },
+
+    toppings: {
+        type: String
+    },
 });
 
 const pizza = mongoose.model<Ipizza>('pizza',PizzaSchema);
