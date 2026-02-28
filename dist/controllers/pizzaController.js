@@ -5,9 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deletePizza = exports.updatePizza = exports.getPizzaById = exports.createPizza = exports.getPizzas = void 0;
 const pizza_1 = __importDefault(require("../models/pizza"));
+const pizza_2 = __importDefault(require("../models/pizza"));
 /**
 * @swagger
-* /api/v1/pizzaS:
+* /api/v1/pizzas:
 *   get:
 *     tags:
 *     - Pizza
@@ -20,11 +21,11 @@ const pizza_1 = __importDefault(require("../models/pizza"));
 */
 const getPizzas = async (req, res) => {
     const filter = req.query;
-    const pizza = await pizza_1.default.find(filter);
-    if (pizza.length === 0) {
+    const pizzas = await pizza_1.default.find(filter);
+    if (pizza_2.default.length === 0) {
         return res.status(404).json({ error: 'no pizza found ,try again' });
     }
-    return res.status(200).json(pizza);
+    return res.status(200).json(pizza_2.default);
 };
 exports.getPizzas = getPizzas;
 /**
@@ -48,8 +49,8 @@ exports.getPizzas = getPizzas;
 *                 required: true
 *                 type: string
 *             price:
-*            required:true
-*           type:number
+*                 required:true
+*                 type:number
 *     responses:
 *       201:
 *         description: Pizza created
@@ -129,7 +130,7 @@ exports.getPizzaById = getPizzaById;
 *         description: Pizza not found
 */
 const updatePizza = async (req, res) => {
-    const pizza = await pizza_1.default.findByIdAndUpdate(req.params.id);
+    const pizza = await pizza_1.default.findById(req.params.id);
     if (!pizza) {
         return res.status(404).json({ 'error': 'pizza not found' });
     }
