@@ -7,7 +7,7 @@ exports.deletePizza = exports.updatePizza = exports.getPizzaById = exports.creat
 const pizza_1 = __importDefault(require("../models/pizza"));
 /**
 * @swagger
-* /api/v1/pizza:
+* /api/v1/pizzaS:
 *   get:
 *     tags:
 *     - Pizza
@@ -145,7 +145,7 @@ const updatePizza = async (req, res) => {
 exports.updatePizza = updatePizza;
 /**
 * @swagger
-* /api/v1/movies/{id}:
+* /api/v1/pizzas/{id}:
 *   delete:
 *     tags:
 *     - Pizza

@@ -3,7 +3,7 @@ import Pizza from '../models/pizza';
 import pizza from '../models/pizza';
 /**
 * @swagger
-* /api/v1/pizza:
+* /api/v1/pizzaS:
 *   get:
 *     tags:
 *     - Pizza
@@ -153,7 +153,7 @@ export const updatePizza =async (req:Request,res:Response) => {
 
 /**
 * @swagger
-* /api/v1/movies/{id}:
+* /api/v1/pizzas/{id}:
 *   delete:
 *     tags:
 *     - Pizza
