@@ -19,6 +19,7 @@ mongoose_1.default.connect(process.env.DB, {})
     .then((response) => console.log('Connected to MongoDB'))
     .catch((error) => console.log(`Connection Failed: ${error}`));
 app.listen(4000, () => { console.log(`Express API running on port 4000`); });
+app.use('/api/v1/pizzas', pizzaRoutes_1.default);
 const options = {
     definition: {
         openapi: '3.0.0',
@@ -41,4 +42,4 @@ app.get('/api-docs', (req, res) => {
     });
     res.send(html);
 });
-app.use('/api/v1/pizza', pizzaRoutes_1.default);
+app.use('/api/v1/pizzas', pizzaRoutes_1.default);

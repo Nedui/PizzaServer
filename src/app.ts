@@ -23,6 +23,8 @@ mongoose.connect(process.env.DB, {})
 
 app.listen(4000, () => { console.log(`Express API running on port 4000`) });
 
+app.use('/api/v1/pizzas', pizzaRouter);
+
 
 const options = {
     definition: {
@@ -48,4 +50,4 @@ app.get('/api-docs', (req: Request, res: Response) => {
     res.send(html);
 });
 
-app.use('/api/v1/pizza', pizzaRouter);
+app.use('/api/v1/pizzas', pizzaRouter);
