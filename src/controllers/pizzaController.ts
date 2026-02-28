@@ -3,7 +3,7 @@ import Pizza from '../models/pizza';
 import pizza from '../models/pizza';
 /**
 * @swagger
-* /api/v1/pizzaS:
+* /api/v1/pizzas:
 *   get:
 *     tags:
 *     - Pizza
@@ -17,7 +17,7 @@ import pizza from '../models/pizza';
 export const getPizzas =async (req:Request,res:Response) => {
     const filter = req.query;
 
-    const pizza =await Pizza.find(filter);
+    const pizzas =await Pizza.find(filter);
 
     if (pizza.length ===0) {
         return res.status(404).json ({ error: 'no pizza found ,try again'});
@@ -47,8 +47,8 @@ export const getPizzas =async (req:Request,res:Response) => {
 *                 required: true
 *                 type: string
 *             price:
-*            required:true
-*           type:number
+*                 required:true
+*                 type:number
 *     responses:
 *       201:
 *         description: Pizza created
@@ -134,7 +134,7 @@ export const getPizzaById = async (req:Request, res:Response) => {
 */
 
 export const updatePizza =async (req:Request,res:Response) => {
-    const pizza = await Pizza.findByIdAndUpdate (req.params.id);
+    const pizza = await Pizza.findById (req.params.id);
 
     if (!pizza) {
         return res.status(404).json ({ 'error': 'pizza not found'});
