@@ -4,7 +4,7 @@ import{createPizza,getPizzas,getPizzaById,updatePizza,deletePizza} from '../cont
 
 const router: Router = express.Router();
 
-router.get('/',getPizzas);;
+router.get('/',getPizzas);
 router.post('/',createPizza);
 router.get('/:id',getPizzaById);
 router.put('/:id',updatePizza);

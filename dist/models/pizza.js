@@ -48,7 +48,10 @@ const PizzaSchema = new mongoose_1.Schema({
     price: {
         type: Number,
         required: [true, 'price required']
-    }
+    },
+    toppings: {
+        type: String
+    },
 });
 const pizza = mongoose_1.default.model('pizza', PizzaSchema);
 exports.default = pizza;

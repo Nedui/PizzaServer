@@ -4,7 +4,7 @@ interface Ipizza {
    size:string;
    crust:string;
    toppings:string;
-   price: Number; 
+   price: number; 
 }
 
 const PizzaSchema = new Schema<Ipizza>({

@@ -7,7 +7,6 @@ const express_1 = __importDefault(require("express"));
 const pizzaController_1 = require("../controllers/pizzaController");
 const router = express_1.default.Router();
 router.get('/', pizzaController_1.getPizzas);
-;
 router.post('/', pizzaController_1.createPizza);
 router.get('/:id', pizzaController_1.getPizzaById);
 router.put('/:id', pizzaController_1.updatePizza);
